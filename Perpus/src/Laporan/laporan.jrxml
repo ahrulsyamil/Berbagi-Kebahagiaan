@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9b9f1337-b83f-4e6a-b2d3-91e291fb7be7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM laporan WHERE DATE(tgl_kembali)=DATE(NOW())]]>
+	</queryString>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="judul" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_pinjam" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_kembali" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="keterangan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="denda" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="denda" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="555" height="21" uuid="52a6d0b0-97b1-4543-a2da-7fb4e3250c9c"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[PT.PERPUSTAKAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="31" width="555" height="16" uuid="6dcd2dfb-1ef6-4b5f-8e48-e1d541ad0177"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[JL.Puncak , Cisarua Bogor. No 65 Indonesia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="47" width="555" height="16" uuid="aa45797c-2646-4fbd-9f8c-ce9652f618b3"/>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[www.pepus.com]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="63" width="555" height="1" uuid="6bfec22f-ddda-4d42-a2f6-f4891f08bfa5"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="459" y="63" width="34" height="16" uuid="e7c97b3e-644e-4c9f-96a7-301b8bacf668"/>
+				<text><![CDATA[Bogor,]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="493" y="63" width="62" height="16" uuid="01c373be-c847-4258-850a-53174aec5d26"/>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" uuid="c163ded7-ae0c-430a-9904-f8d7db014ce2"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Laporan harian]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="121" y="0" width="123" height="20" uuid="9e649611-5ca1-4512-8a4b-9a010bf047c4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Judul Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="244" y="0" width="92" height="20" uuid="fa1b6f9d-6770-4826-af58-169df3aa9c05"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tgl  Pinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="121" height="20" uuid="5ec98302-2fce-4eaf-98d8-43460e081a67"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nama ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="0" width="75" height="20" uuid="fdca1b17-ef6c-4565-ad24-1db063741e10"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Keterangan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="1" width="92" height="20" uuid="27faf63c-5682-4543-95e8-6962cb1c2c1e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tgl Kembali]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="0" width="52" height="20" uuid="c80eaaa6-da38-49ed-b99b-4262b3bcade1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Denda]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="8b8696a2-86dd-42ab-b103-79fd4f7ee814"/>
+				<graphicElement>
+					<pen lineWidth="3.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="121" y="0" width="123" height="20" uuid="f950c2ac-fcbc-492e-abf5-297ddbf493f9"/>
+				<textFieldExpression><![CDATA[$F{judul}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="244" y="0" width="92" height="20" uuid="563d6ebd-86bd-4c57-a708-c18d07bb5a50"/>
+				<textFieldExpression><![CDATA[$F{tgl_pinjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="428" y="0" width="75" height="20" uuid="07c6376b-0cb2-493f-910e-c66a128a22c4"/>
+				<textFieldExpression><![CDATA[$F{keterangan}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="336" y="0" width="92" height="20" uuid="9d878393-0373-47be-a57f-1f02e62bbe91"/>
+				<textFieldExpression><![CDATA[$F{tgl_kembali}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="0" width="52" height="20" uuid="550c0d04-8cb2-4999-8660-65951ebef25c"/>
+				<textFieldExpression><![CDATA[$F{denda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="121" height="20" uuid="22425219-ccfa-44da-897d-6cd3d94148b7"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="80" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="461" y="34" width="80" height="20" uuid="1443d766-b159-4738-927b-50366145e069"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="541" y="34" width="14" height="20" uuid="438a7745-cb72-42b4-8c8b-0ff757a4a234"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="438" y="0" width="65" height="20" uuid="576e5dc3-f45a-45fe-99fe-93958a3182fb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="503" y="0" width="52" height="20" uuid="7be3e7c9-d048-4c66-b3d5-6c88def334ea"/>
+				<textFieldExpression><![CDATA[$F{denda}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
